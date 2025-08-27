@@ -1,0 +1,214 @@
+:root {
+    --text: #fff;
+    --bg: #000;
+    --card-bg: rgba(255, 255, 255, 0.08);
+    --accent: #007bff;
+}
+
+body.light {
+    --text: #000;
+    --bg: #fff;
+    --card-bg: rgba(0, 0, 0, 0.05);
+    --accent: #ff5722;
+}
+
+body {
+    margin: 0;
+    font-family: "Inter", sans-serif;
+    color: var(--text);
+    background: var(--bg);
+    scroll-behavior: smooth;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 12px;
+    z-index: 1000;
+}
+
+body.light .navbar {
+    background: rgba(255, 255, 255, 0.8);
+}
+
+.navbar a {
+    color: var(--text);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.app {
+    margin-top: 70px;
+    /* space for navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.card {
+    width: 90%;
+    max-width: 850px;
+    margin: 25px 0;
+    padding: 30px;
+    border-radius: 16px;
+    background: var(--card-bg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+    text-align: center;
+}
+
+.hero-img,
+.circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 15px 0;
+    object-fit: cover;
+}
+
+.tagline {
+    margin-top: -8px;
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.semester {
+    margin: 20px 0;
+}
+
+.bar-box {
+    margin: 14px 0;
+    text-align: left;
+}
+
+.bar-box span {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.bar {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    height: 10px;
+    margin-top: 5px;
+    transition: width 1.5s ease;
+}
+
+.deadlines {
+    margin-top: 28px;
+    text-align: left;
+}
+
+.deadlines h3 {
+    margin-bottom: 15px;
+}
+
+.deadlines ul {
+    list-style: none;
+    padding: 0;
+}
+
+.deadlines li {
+    margin: 12px 0;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+}
+
+.badge {
+    background: crimson;
+    padding: 6px 14px;
+    border-radius: 12px;
+    margin-right: 12px;
+    font-weight: bold;
+    color: #fff;
+}
+
+button {
+    padding: 10px 22px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--accent);
+    color: #fff;
+    font-weight: bold;
+}
+
+.bg-home {
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+}
+
+.bg1 {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+}
+
+.bg2 {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.bg3 {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.bg4 {
+    background: linear-gradient(135deg, #f39c12, #d35400);
+}
+
+.bg5 {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.bg6 {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+/* Ongoing animation for bars */
+.bar.animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.bar.animated::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    height: 100%;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -40%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* Highlight ongoing semester */
+.semester.ongoing h3 {
+    color: yellow;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+}

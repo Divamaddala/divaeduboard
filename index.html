@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>EduBoard – A Student Progress Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <a href="#home">Home</a>
+        <a href="#year1">1st Year</a>
+        <a href="#year2">2nd Year</a>
+        <a href="#year3">3rd Year</a>
+        <a href="#year4">4th Year</a>
+        <a href="#profile">Profile</a>
+        <a href="#settings">Settings</a>
+    </nav>
+
+    <div class="app">
+
+        <!-- Home Slide -->
+        <header id="home" class="card bg-home">
+            <h1>EduBoard – A Student Progress Dashboard</h1>
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile" class="hero-img" />
+            <h2>Divakar M</h2>
+            <p class="tagline">Full Stack Developer 🚀 | ECE Graduate (2020–2024)</p>
+        </header>
+
+        <!-- 1st Year -->
+        <section id="year1" class="card bg1">
+            <h2>1st Year</h2>
+            <div class="semester">
+                <h3>1-1 Semester</h3>
+                <div class="bar-box"><span>CGPA: 7.2</span>
+                    <div class="bar" data-value="72"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 90%</span>
+                    <div class="bar" data-value="90"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 80%</span>
+                    <div class="bar" data-value="80"></div>
+                </div>
+            </div>
+            <div class="semester">
+                <h3>1-2 Semester</h3>
+                <div class="bar-box"><span>CGPA: 7.5</span>
+                    <div class="bar" data-value="75"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 92%</span>
+                    <div class="bar" data-value="92"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 82%</span>
+                    <div class="bar" data-value="82"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2nd Year -->
+        <section id="year2" class="card bg2">
+            <h2>2nd Year</h2>
+            <div class="semester">
+                <h3>2-1 Semester</h3>
+                <div class="bar-box"><span>CGPA: 7.6</span>
+                    <div class="bar" data-value="76"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 91%</span>
+                    <div class="bar" data-value="91"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 85%</span>
+                    <div class="bar" data-value="85"></div>
+                </div>
+            </div>
+            <div class="semester">
+                <h3>2-2 Semester</h3>
+                <div class="bar-box"><span>CGPA: 7.8</span>
+                    <div class="bar" data-value="78"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 93%</span>
+                    <div class="bar" data-value="93"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 87%</span>
+                    <div class="bar" data-value="87"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3rd Year -->
+        <section id="year3" class="card bg3">
+            <h2>3rd Year</h2>
+            <div class="semester">
+                <h3>3-1 Semester</h3>
+                <div class="bar-box"><span>CGPA: 8.0</span>
+                    <div class="bar" data-value="80"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 95%</span>
+                    <div class="bar" data-value="95"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 88%</span>
+                    <div class="bar" data-value="88"></div>
+                </div>
+            </div>
+            <div class="semester">
+                <h3>3-2 Semester</h3>
+                <div class="bar-box"><span>CGPA: 8.2</span>
+                    <div class="bar" data-value="82"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 94%</span>
+                    <div class="bar" data-value="94"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 89%</span>
+                    <div class="bar" data-value="89"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4th Year -->
+        <section id="year4" class="card bg4">
+            <h2>4th Year</h2>
+            <div class="semester">
+                <h3>4-1 Semester</h3>
+                <div class="bar-box"><span>CGPA: 8.3</span>
+                    <div class="bar" data-value="83"></div>
+                </div>
+                <div class="bar-box"><span>Attendance: 96%</span>
+                    <div class="bar" data-value="96"></div>
+                </div>
+                <div class="bar-box"><span>Labs: 90%</span>
+                    <div class="bar" data-value="90"></div>
+                </div>
+            </div>
+            <div class="semester ongoing">
+                <h3>4-2 Semester (Ongoing)</h3>
+                <div class="bar-box">
+                    <span>CGPA: 8.2 (Expected)</span>
+                    <div class="bar animated" data-value="82"></div>
+                </div>
+                <div class="bar-box">
+                    <span>Attendance: 54% (Till Jan 2024)</span>
+                    <div class="bar animated" data-value="54"></div>
+                </div>
+                <div class="bar-box">
+                    <span>Labs: 61% (In Progress)</span>
+                    <div class="bar animated" data-value="61"></div>
+                </div>
+
+                <div class="deadlines">
+                    <h3>Upcoming Deadlines (Jan–Apr 2024)</h3>
+                    <ul>
+                        <li><span class="badge">Jan 15</span> Final Project Proposal</li>
+                        <li><span class="badge">Feb 20</span> Core Lab Evaluations</li>
+                        <li><span class="badge">Mar 10</span> Project Review</li>
+                        <li><span class="badge">Apr 5</span> Final Viva + Exams</li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Profile -->
+        <section id="profile" class="card bg5">
+            <h2>Profile Info</h2>
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar" class="circle" />
+            <p><strong>Name:</strong> Divakar M</p>
+            <p><strong>Roll No:</strong> 20L61A0417</p>
+            <p><strong>Email:</strong> maddaladiva@gmail.com</p>
+            <p><strong>College:</strong> Chaitanya Engineering College</p>
+            <p><strong>Department:</strong> ECE</p>
+        </section>
+
+        <!-- Settings -->
+        <section id="settings" class="card bg6">
+            <h2>Settings</h2>
+            <button id="theme-toggle">Toggle Dark/Light Mode</button>
+        </section>
+    </div>
+
+    <script>
+        // Theme toggle
+        const btn = document.getElementById("theme-toggle");
+        btn.addEventListener("click", () => {
+            document.body.classList.toggle("light");
+        });
+
+        // Animate bars on scroll
+        const bars = document.querySelectorAll(".bar");
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const value = entry.target.getAttribute("data-value");
+                    entry.target.style.width = value + "%";
+                }
+            });
+        }, {
+            threshold: 0.3
+        });
+        bars.forEach(bar => {
+            bar.style.width = "0";
+            observer.observe(bar);
+        });
+    </script>
+</body>
+
+</html>
