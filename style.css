@@ -1,3 +1,21 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    transition: background 0.3s, color 0.3s;
+    color: var(--text);
+    background: var(--bg);
+    scroll-behavior: smooth;
+}
+
+/* ================= THEME VARIABLES ================= */
 :root {
     --text: #fff;
     --bg: #000;
@@ -12,44 +30,90 @@ body.light {
     --accent: #ff5722;
 }
 
-body {
-    margin: 0;
-    font-family: "Inter", sans-serif;
-    color: var(--text);
-    background: var(--bg);
-    scroll-behavior: smooth;
+/* ================= SIDEBAR ================= */
+.sidebar {
+    width: 220px;
+    background: #0d47a1;
+    color: #fff;
+    padding: 20px;
+    flex-shrink: 0;
 }
 
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0, 0, 0, 0.7);
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 12px;
-    z-index: 1000;
+.sidebar h2 {
+    margin-bottom: 20px;
 }
 
-body.light .navbar {
-    background: rgba(255, 255, 255, 0.8);
+.sidebar ul {
+    list-style: none;
 }
 
-.navbar a {
-    color: var(--text);
+.sidebar ul li {
+    margin: 15px 0;
+}
+
+.sidebar ul li a {
+    color: #fff;
     text-decoration: none;
-    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ================= MAIN ================= */
+main {
+    flex: 1;
+    padding: 20px;
 }
 
 .app {
-    margin-top: 70px;
-    /* space for navbar */
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
+}
+
+/* ================= HEADER ================= */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.profile-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.notif {
+    font-size: 20px;
+    margin-left: auto;
+    cursor: pointer;
+}
+
+.theme-toggle {
+    margin-left: 15px;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 5px;
+}
+
+/* ================= CARDS ================= */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
 .card {
@@ -61,25 +125,21 @@ body.light .navbar {
     background: var(--card-bg);
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
     text-align: center;
+    color: var(--text);
 }
 
-.hero-img,
-.circle {
-    width: 130px;
-    height: 130px;
-    border-radius: 50%;
-    margin: 15px 0;
-    object-fit: cover;
+/* ================= PROGRESS ================= */
+.progress-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
 }
 
-.tagline {
-    margin-top: -8px;
-    font-size: 1rem;
-    opacity: 0.9;
-}
-
-.semester {
-    margin: 20px 0;
+.progress-table th,
+.progress-table td {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    text-align: left;
 }
 
 .bar-box {
@@ -100,6 +160,40 @@ body.light .navbar {
     transition: width 1.5s ease;
 }
 
+.bar span {
+    display: block;
+    height: 100%;
+    background: #0d47a1;
+}
+
+/* Ongoing animation */
+.bar.animated {
+    position: relative;
+    overflow: hidden;
+}
+
+.bar.animated::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -40%;
+    height: 100%;
+    width: 40%;
+    background: rgba(255, 255, 255, 0.4);
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        left: -40%;
+    }
+
+    100% {
+        left: 100%;
+    }
+}
+
+/* ================= DEADLINES ================= */
 .deadlines {
     margin-top: 28px;
     text-align: left;
@@ -116,9 +210,12 @@ body.light .navbar {
 
 .deadlines li {
     margin: 12px 0;
-    font-size: 0.95rem;
+    padding: 10px;
+    background: var(--card-bg);
+    border-radius: 8px;
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .badge {
@@ -130,16 +227,46 @@ body.light .navbar {
     color: #fff;
 }
 
-button {
-    padding: 10px 22px;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    background: var(--accent);
-    color: #fff;
-    font-weight: bold;
+/* ================= PROFILE ================= */
+.profile-card,
+#profile {
+    text-align: center;
 }
 
+.hero-img,
+.circle {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    margin: 15px 0;
+    object-fit: cover;
+}
+
+.profile-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+/* ================= FOOTER ================= */
+footer {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 14px;
+    background: #eee;
+    border-radius: 8px;
+    color: #000;
+}
+
+body.dark footer {
+    background: #1e1e1e;
+    color: #fff;
+}
+
+/* ================= BACKGROUNDS ================= */
 .bg-home {
     background: linear-gradient(135deg, #2c3e50, #34495e);
 }
@@ -168,33 +295,6 @@ button {
     background: linear-gradient(135deg, #e74c3c, #c0392b);
 }
 
-/* Ongoing animation for bars */
-.bar.animated {
-    position: relative;
-    overflow: hidden;
-}
-
-.bar.animated::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -40%;
-    height: 100%;
-    width: 40%;
-    background: rgba(255, 255, 255, 0.4);
-    animation: shimmer 2s infinite;
-}
-
-@keyframes shimmer {
-    0% {
-        left: -40%;
-    }
-
-    100% {
-        left: 100%;
-    }
-}
-
 /* Highlight ongoing semester */
 .semester.ongoing h3 {
     color: yellow;
@@ -211,4 +311,212 @@ button {
     50% {
         opacity: 0.6;
     }
+}
+
+/* Main Layout Fix */
+main {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center horizontally */
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    /* adjust depending on your layout */
+    margin: 0 auto;
+    /* center container */
+}
+
+
+/* ================= RESPONSIVE ================= */
+@media(max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    main {
+        padding: 10px;
+    }
+}
+
+/* Navbar (default: top bar for medium+ screens) */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    background: linear-gradient(90deg, #0d47a1, #1976d2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 0 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s;
+}
+
+.navbar a:hover {
+    color: #ffeb3b;
+}
+
+/* Give space so content isn't hidden under navbar */
+.app {
+    margin-top: 70px;
+    /* leave space for navbar */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 1100px;
+    /* keeps content centered like a dashboard */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+/* 🔹 Mobile View - Navbar becomes Sidebar */
+@media(max-width: 900px) {
+    .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: auto;
+        bottom: 0;
+        width: 200px;
+        height: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 15px;
+        padding: 30px 15px;
+        background: linear-gradient(180deg, #0d47a1, #1976d2);
+    }
+
+    .navbar a {
+        width: 100%;
+        padding: 10px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .app {
+        margin-top: 0;
+        margin-left: 220px;
+        /* push content right when sidebar is visible */
+    }
+}
+
+/* 📊 Overview */
+.overview {
+    margin: 40px 0;
+    text-align: center;
+}
+
+.overview h2 {
+    margin-bottom: 20px;
+}
+
+.overview-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.overview-card {
+    padding: 20px;
+    border-radius: 12px;
+    color: #fff;
+    font-weight: bold;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.overview-card h3 {
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.overview-card p {
+    font-size: 1.5rem;
+}
+
+/* Background colors for variety */
+.bg1 {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+}
+
+.bg2 {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.bg3 {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.bg4 {
+    background: linear-gradient(135deg, #f39c12, #d35400);
+}
+
+/* 📚 Subjects */
+.subjects {
+    margin: 40px 0;
+}
+
+.subjects h2 {
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subjects table {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.subjects th,
+.subjects td {
+    padding: 12px;
+    text-align: left;
+    color: var(--text);
+}
+
+.subjects tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.bar span {
+    display: block;
+    height: 100%;
+    background: #0d47a1;
+}
+
+html {
+    scroll-behavior: smooth;
 }

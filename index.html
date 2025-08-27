@@ -7,9 +7,11 @@
     <title>EduBoard – A Student Progress Dashboard</title>
     <link rel="stylesheet" href="style.css" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 
-<body>
+<body class="light">
+
     <!-- Navbar -->
     <nav class="navbar">
         <a href="#home">Home</a>
@@ -17,6 +19,9 @@
         <a href="#year2">2nd Year</a>
         <a href="#year3">3rd Year</a>
         <a href="#year4">4th Year</a>
+        <a href="#overview">Overview</a>
+        <a href="#subjects">Subjects</a>
+        <a href="#deadlines">Deadlines</a>
         <a href="#profile">Profile</a>
         <a href="#settings">Settings</a>
     </nav>
@@ -26,7 +31,7 @@
         <!-- Home Slide -->
         <header id="home" class="card bg-home">
             <h1>EduBoard – A Student Progress Dashboard</h1>
-            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Profile" class="hero-img" />
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop" alt="Profile" class="hero-img" />
             <h2>Divakar M</h2>
             <p class="tagline">Full Stack Developer 🚀 | ECE Graduate (2020–2024)</p>
         </header>
@@ -135,16 +140,13 @@
             </div>
             <div class="semester ongoing">
                 <h3>4-2 Semester (Ongoing)</h3>
-                <div class="bar-box">
-                    <span>CGPA: 8.2 (Expected)</span>
+                <div class="bar-box"><span>CGPA: 8.2 (Expected)</span>
                     <div class="bar animated" data-value="82"></div>
                 </div>
-                <div class="bar-box">
-                    <span>Attendance: 54% (Till Jan 2024)</span>
+                <div class="bar-box"><span>Attendance: 54% (Till Jan 2024)</span>
                     <div class="bar animated" data-value="54"></div>
                 </div>
-                <div class="bar-box">
-                    <span>Labs: 61% (In Progress)</span>
+                <div class="bar-box"><span>Labs: 61% (In Progress)</span>
                     <div class="bar animated" data-value="61"></div>
                 </div>
 
@@ -158,13 +160,81 @@
                     </ul>
                 </div>
             </div>
-
         </section>
+
+        <!-- Overview Cards -->
+        <!-- Overview Cards -->
+        <section id="overview" class="overview">
+            <h2>📌 Overview</h2>
+            <div class="overview-cards">
+                <div class="overview-card bg1">
+                    <h3>Overall CGPA</h3>
+                    <p>7.9</p>
+                </div>
+                <div class="overview-card bg2">
+                    <h3>Attendance</h3>
+                    <p>89%</p>
+                </div>
+                <div class="overview-card bg3">
+                    <h3>Assignments Due</h3>
+                    <p>3</p>
+                </div>
+                <div class="overview-card bg4">
+                    <h3>Total Credits</h3>
+                    <p>180</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 📚 Subjects Section -->
+        <section id="subjects" class="subjects">
+            <h2>📚 Subjects Progress</h2>
+            <table>
+                <tr>
+                    <th>Subject</th>
+                    <th>Progress</th>
+                </tr>
+                <tr>
+                    <td>VLSI</td>
+                    <td>
+                        <div class="bar"><span style="width:80%"></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Signals & Systems</td>
+                    <td>
+                        <div class="bar"><span style="width:70%"></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Computer Networks</td>
+                    <td>
+                        <div class="bar"><span style="width:65%"></span></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Network Analysis</td>
+                    <td>
+                        <div class="bar"><span style="width:75%"></span></div>
+                    </td>
+                </tr>
+            </table>
+        </section>
+
+        <!-- Deadlines -->
+        <section id="deadlines" class="deadlines">
+            <h2>Other Deadlines</h2>
+            <ul>
+                <li><span class="badge">May 10</span> Internship Report</li>
+                <li><span class="badge">June 01</span> Final Project Submission</li>
+            </ul>
+        </section>
+
 
         <!-- Profile -->
         <section id="profile" class="card bg5">
             <h2>Profile Info</h2>
-            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Avatar" class="circle" />
+            <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=1171&auto=format&fit=crop" alt="Avatar" class="circle" />
             <p><strong>Name:</strong> Divakar M</p>
             <p><strong>Roll No:</strong> 20L61A0417</p>
             <p><strong>Email:</strong> maddaladiva@gmail.com</p>
@@ -177,6 +247,12 @@
             <h2>Settings</h2>
             <button id="theme-toggle">Toggle Dark/Light Mode</button>
         </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>© 2025 EduBoard | Built by Divakar M</p>
+        </footer>
+
     </div>
 
     <script>
@@ -184,6 +260,7 @@
         const btn = document.getElementById("theme-toggle");
         btn.addEventListener("click", () => {
             document.body.classList.toggle("light");
+            document.body.classList.toggle("dark");
         });
 
         // Animate bars on scroll
@@ -192,15 +269,17 @@
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     const value = entry.target.getAttribute("data-value");
-                    entry.target.style.width = value + "%";
+                    if (value) entry.target.style.width = value + "%";
                 }
             });
         }, {
             threshold: 0.3
         });
         bars.forEach(bar => {
-            bar.style.width = "0";
-            observer.observe(bar);
+            if (bar.getAttribute("data-value")) {
+                bar.style.width = "0";
+                observer.observe(bar);
+            }
         });
     </script>
 </body>
